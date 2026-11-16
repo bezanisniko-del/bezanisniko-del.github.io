@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bezanisniko-del.github.io/sitemap.xml
