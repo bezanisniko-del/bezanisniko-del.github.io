@@ -1,23 +1,5 @@
-// Day/Night toggle (remembered across pages) and the publication filter.
+// Publication filter.
 (function () {
-  var root = document.documentElement;
-  var btn = document.querySelector('.theme-toggle');
-  function paint() {
-    var dark = root.dataset.theme === 'dark';
-    btn.textContent = dark ? 'Day' : 'Night';
-    btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-  }
-  if (btn) {
-    btn.hidden = false;
-    paint();
-    btn.addEventListener('click', function () {
-      var dark = root.dataset.theme !== 'dark';
-      if (dark) root.dataset.theme = 'dark'; else delete root.dataset.theme;
-      try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
-      paint();
-    });
-  }
-
   var filters = document.querySelector('.filters');
   if (!filters) return;
   var pubs = [].slice.call(document.querySelectorAll('#pub-list > li'));
